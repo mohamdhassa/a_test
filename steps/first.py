@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import StaleElementReferenceException, TimeoutException
 import time
 
 
@@ -85,6 +86,10 @@ def last(context):
         search.send_keys("selenium")
         search.send_keys(Keys.RETURN)
 
+    except TimeoutException as e:
+        print(f"Timeout occurred: {e}")
+        pass
+
     except Exception as e:
         print(f"Error: {e}")
         pass
@@ -115,6 +120,10 @@ def last2(context):
         )
         search.send_keys("hello")
         search.send_keys(Keys.RETURN)
+
+    except TimeoutException as e:
+        print(f"Timeout occurred: {e}")
+        pass
 
     except Exception as e:
         print(f"Error: {e}")
