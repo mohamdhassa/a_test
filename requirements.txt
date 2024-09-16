@@ -1,0 +1,2 @@
+selenium==4.4.3
+behave==1.2.6
