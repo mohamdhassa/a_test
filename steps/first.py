@@ -59,6 +59,8 @@ def search(context):
         )
         aaa.click()
         time.sleep(2)
+    except Exception as e:
+        pass
 
 
 
@@ -70,6 +72,9 @@ def last(context):
 
     except Exception as e:
         print("something went wrong:", e)
+    except Exception as e:
+      pass
+
 
 
         
@@ -90,6 +95,7 @@ def last(context):
             time.sleep(2)
             
         except Exception as e:
+            pass 
             print(f"error{e}")
             search.send_keys("selenium")
             search.send_keys(Keys.RETURN)
@@ -101,6 +107,9 @@ def last(context):
             EC.presence_of_element_located((By.XPATH,"//*[@id='rso']/div[1]/div/div/div/div/div/div/div/div[1]/div/span/a")))
             aaa.click()
             time.sleep(2)
+        except Exception as e:
+         pass
+
         
         
 
@@ -140,6 +149,9 @@ def last2(context):
             aaa = WebDriverWait(context.driver,50).until(
                 EC.presence_of_element_located((By.XPATH,"//*[@id='rso']/div[4]/div/div/div[1]/div/div/span/a/h3/span"))
             )
+        except Exception as e:
+         pass
+
         finally:
             time.sleep(2)
             context.driver.quit()
